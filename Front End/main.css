@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --primary-family-font: "Roboto", sans-serif;
+    --primrary-font-size: 12px; /* TO DO: Use .rem */
+    --primary-color: #F2F2F2;
+    --secundary-color: #5DDBF5;
+    --terciary-color: #121212;
+}
+
+input[type="checkbox"] {
+    appearance: none; /* Removes default browser styling */
+    -webkit-appearance: none; /* For older browsers */
+    background-color: var(--primary-color);
+    width: 1rem;
+    height: 1rem;
+}

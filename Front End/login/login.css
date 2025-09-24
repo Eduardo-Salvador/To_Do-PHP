@@ -1,0 +1,18 @@
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100px;
+    width:100px;
+    border: solid 5px black;
+    background-color: gray;
+    color: white;
+}
+button{
+    border: solid 5px black;
+}
