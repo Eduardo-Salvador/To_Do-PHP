@@ -1,30 +1,38 @@
 <?php
     session_start();
-    include "connection.php";
+    include __DIR__ . "/../Data Base/connection.php";
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $username = $_POST['username'];
-        $email = $_POST['email'];
-        $birthdate = $_POST['birthdate'];
-        $password = $_POST['password'];
-        $hash = password_hash($password, PASSWORD_DEFAULT);
-    }
+        $username = $_POST['username'] ?? '';
+        $email = $_POST['email'] ?? '';
+        $birthdate = $_POST['birthdate'] ?? '';
+        $password = $_POST['password'] ?? '';
 
-    $stmt = $conn->prepare("SELECT id FROM user WHERE username = ? OR email = ? LIMIT 1");
-    $stmt->bind_param('ss', $username, $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
+        if(empty($username) || empty($email) || empty($birthdate) || empty($password)){
+            header('Location: /Desenvolvimento%20de%20Sistemas%20Web%201/To_Do-PHP/Register/register.html?error=emptyfields');
+            exit();
+        }
 
-    if($row = $result->fetch_assoc()){
-        header('Location: registrer.php?error=invalid');
-        exit();
+        $stmt = $conn->prepare("SELECT id_user FROM user WHERE username = ? OR email = ? LIMIT 1");
+        $stmt->bind_param('ss', $username, $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if($result->fetch_assoc()){
+            header('Location: /Desenvolvimento%20de%20Sistemas%20Web%201/To_Do-PHP/Register/register.html?error=userexists');
+            exit();
+        } else {
+            $hash = password_hash($password, PASSWORD_DEFAULT);
+
+            $stmt = $conn->prepare("INSERT INTO user (username, email, birthdate, password) VALUES (?, ?, ?, ?)");
+            $stmt->bind_param("ssss", $username, $email, $birthdate, $hash);
+            $stmt->execute();
+            $stmt->close();
+            header('Location: /Desenvolvimento%20de%20Sistemas%20Web%201/To_Do-PHP/Login/login.html?success=registered');
+            exit();
+        }
     } else {
-        $smtm = $conn->prepare("INSERT INTO user (username, email, birthdate, password) VALUES (?, ?, ?, ?)");
-        $smtm->bind_param("ssss", $username, $email, $birthdate, $hash);
-        $smtm->execute();
-        $smtm->close();
-        echo("Successfully registered, please login.");
-        header("Location: login.php");
+        header('Location: /Desenvolvimento%20de%20Sistemas%20Web%201/To_Do-PHP/Register/register.html?error=emptyfields');
         exit();
     }
 ?>
