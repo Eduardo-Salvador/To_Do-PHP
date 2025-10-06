@@ -3,7 +3,7 @@
 session_start();
 
 // Importa o arquivo de conexão com o banco de dados
-    include __DIR__ . "/../../Model/connection.php";
+  include __DIR__ . "/../Model/connection.php";
 
 // Verifica se o usuário está logado
 if (!isset($_SESSION['id_user'])) {

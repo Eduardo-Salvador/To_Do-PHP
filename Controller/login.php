@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    include __DIR__ . "/../../Model/connection.php";
+    include __DIR__ . "/../Model/connection.php";
 
     $EMAIL = trim($_POST['email'] ?? '');
     $PASS = $_POST['password'] ?? '';
@@ -11,7 +11,7 @@
     $result = $stmt->get_result();
 
     if(empty($EMAIL) || empty($PASS)) {
-        header('Location: ../../View/login.html?error=emptyfields');
+        header('Location: ../View/login.html?error=emptyfields');
         exit();
     } else if(strtolower($EMAIL) == "admin@example.com" && $PASS == "123"){
         $_SESSION['username'] = 'admin';
@@ -21,15 +21,15 @@
         if(password_verify($PASS, $row['password'])){
             $_SESSION['id_user'] = $row['id_user'];
             $_SESSION['email'] = $row['email'];
-            header('Location: ../../View/initialtab.html');
+            header('Location: ../View/initialtab.html');
             exit();
         } else {
-            header('Location: ../../View/login.html?error=invalidpassword');
+            header('Location: ../View/login.html?error=invalidpassword');
             exit();
         }
     }
     else {
-        header('Location: ../../View/login.html?error=invaliduser');
+        header('Location: ../View/login.html?error=invaliduser');
         exit();
     }
 ?>

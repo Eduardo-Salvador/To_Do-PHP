@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include __DIR__ . "/../../Model/Database/connection.php";
+    include __DIR__ . "/../Model/connection.php";
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $username = $_POST['username'] ?? '';
@@ -9,7 +9,7 @@
         $password = $_POST['password'] ?? '';
 
         if(empty($username) || empty($email) || empty($birthdate) || empty($password)){
-            header('Location: ../../View/register.html?error=emptyfields');
+            header('Location: ../View/register.html?error=emptyfields');
             exit();
         }
 
@@ -19,7 +19,7 @@
         $result = $stmt->get_result();
 
         if($result->fetch_assoc()){
-            header('Location: ../../View/register.html?error=userexists');
+            header('Location: ../View/register.html?error=userexists');
             exit();
         } else {
             $hash = password_hash($password, PASSWORD_DEFAULT);
@@ -28,11 +28,11 @@
             $stmt->bind_param("ssss", $username, $email, $birthdate, $hash);
             $stmt->execute();
             $stmt->close();
-            header('Location: ../../View/login.html?success=registered');
+            header('Location: ../View/login.html?success=registered');
             exit();
         }
     } else {
-        header('Location: ../../View/register.html?error=invalidrequest');
+        header('Location: ../View/register.html?error=invalidrequest');
         exit();
     }
 ?>
