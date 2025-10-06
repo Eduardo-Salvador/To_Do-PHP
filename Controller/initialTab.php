@@ -3,12 +3,12 @@
 session_start();
 
 // Importa o arquivo de conexão com o banco de dados
-require __DIR__ . '/../Data Base/connection.php';
+    include __DIR__ . "/../../Model/connection.php";
 
 // Verifica se o usuário está logado
 if (!isset($_SESSION['id_user'])) {
   // Se não estiver logado, redireciona para a página de login
-  header('Location: ../Login/login.html');
+  header('Location: ../Controller/Login/login.html');
   exit();
 }
 
