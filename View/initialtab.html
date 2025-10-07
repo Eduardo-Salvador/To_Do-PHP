@@ -1,55 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../assets/initialtab.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="../img/icon-to-do-list.png" />
+    <link rel="stylesheet" type="text/css" href="../../assets/initialtab.css" />
     <title>To Do | DSW1</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="general-wrapper">
-        <div class="welcome-text-wrapper">
-            <h1>Welcome back!</h1>
-            <h2>What's your plan for today?</h2>
+      <div class="welcome-text-wrapper">
+        <h1>Welcome back!</h1>
+        <h2>What's your plan for today?</h2>
+      </div>
+      <div>
+        <div class="item-wrapper">
+          <ul>
+            <li>
+              <label class="add-button-container">
+                <input
+                  type="text"
+                  placeholder="New task..."
+                  name="task-input"
+                />
+                <button type="submit">ADD</button>
+              </label>
+            </li>
+            <li>
+              <label class="custom-checkbox-container">
+                <input type="checkbox" name="item-name" value="Item 1" />
+                <span class="checkmark"></span>
+                <span class="item-text">Item 1 Name</span>
+                <button class="delete-button">X</button>
+              </label>
+            </li>
+            <li>
+              <label class="custom-checkbox-container">
+                <input type="checkbox" name="item-name" value="Item 1" />
+                <span class="checkmark"></span>
+                <span class="item-text">Item 1 Name</span>
+                <button class="delete-button">X</button>
+              </label>
+            </li>
+            <li>
+              <label class="custom-checkbox-container">
+                <input type="checkbox" name="item-name" value="Item 1" />
+                <span class="checkmark"></span>
+                <span class="item-text">Item 1 Name</span>
+                <button class="delete-button">X</button>
+              </label>
+            </li>
+          </ul>
         </div>
-        <div>
-            <div class="item-wrapper">
-                <ul>
-                    <li>
-                        <label class="add-button-container">
-                            <button>ADD</button>
-                        </label>
-                    </li>
-                    <li>
-                        <label class="custom-checkbox-container">
-                            <input type="checkbox" name="item-name" value="Item 1">
-                            <span class="checkmark"></span>
-                            <span class="item-text">Item 1 Name</span>
-                            <button class="delete-button">X</button>
-                        </label>
-                    </li>
-                    <li>
-                        <label class="custom-checkbox-container">
-                            <input type="checkbox" name="item-name" value="Item 1">
-                            <span class="checkmark"></span>
-                            <span class="item-text">Item 1 Name</span>
-                            <button class="delete-button">X</button>
-                        </label>
-                    </li>
-                    <li>
-                        <label class="custom-checkbox-container">
-                            <input type="checkbox" name="item-name" value="Item 1">
-                            <span class="checkmark"></span>
-                            <span class="item-text">Item 1 Name</span>
-                            <button class="delete-button">X</button>
-                        </label>
-                    </li>
-                </ul>
-            </div>
-        </div>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>

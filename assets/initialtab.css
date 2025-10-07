@@ -1,145 +1,218 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     background-color: #121212;
     font-family: "Roboto", sans-serif;
+    min-height: 100vh;
+    padding: 40px 20px;
 }
 
 .general-wrapper {
-    margin: 10%;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .welcome-text-wrapper {
-    font-family: "Roboto", sans-serif;
+    margin-bottom: 40px;
 }
 
 .welcome-text-wrapper h1 {
-    margin-bottom: -30px;
     font-weight: 700;
     font-size: 40px;
     color: #F2F2F2;
+    margin-bottom: 10px;
 }
 
 .welcome-text-wrapper h2 {
     font-weight: 500;
-    font-size: 34px;
+    font-size: 28px;
     color: #CCCCCC;
 }
 
-.item-wrapper {
-    background-color: none;
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    background-color: none;
-    padding: 10px;
-    border-radius: 5px;
+/* Remove circles and numbers from the list */
+.item-wrapper ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Individual cards */
+.item-wrapper li {
+    background-color: #1E1E1E;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    transition: all 0.2s ease;
+}
+
+.item-wrapper li:hover {
+    background-color: #2A2A2A;
+    transform: scale(1.01);
 }
 
 .add-button-container {
-    background-color: #3B3B3B;
-    display: block;
-    margin-bottom: 25px;
-    position: relative;
-    padding-left: 35px;
-    font-size: 30px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.add-button-container input[type="text"] {
+    flex-grow: 1;
+    height: 50px;
+    padding: 0 15px;
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    background-color: #2A2A2A;
+    border: 2px solid #3A3A3A;
+    border-radius: 8px;
+    color: #F2F2F2;
+    transition: all 0.2s ease;
+}
+
+.add-button-container input[type="text"]::placeholder {
+    color: #8A8886;
+}
+
+.add-button-container input[type="text"]:focus {
+    outline: none;
+    border-color: #2196F3;
+    background-color: #2E2E2E;
 }
 
 .add-button-container button {
-    height: 100%;
-    width: 100%;
+    height: 50px;
+    padding: 0 30px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+}
+
+.add-button-container button:hover {
+    background-color: #1976D2;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
+}
+
+.add-button-container button:active {
+    transform: translateY(0);
 }
 
 .custom-checkbox-container {
-    background-color: #3B3B3B;
-    display: block;
-    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 12px;
+}
+
+/* Custom checkbox design */
+.custom-checkbox-container input[type="checkbox"] {
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border: 2px solid #8A8886;
+    border-radius: 50%;
+    cursor: pointer;
     position: relative;
-    padding-left: 35px;
-    cursor: pointer;
-    font-size: 30px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    flex-grow: 1;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
 }
 
-/* Hide the browser's default checkbox */
-.custom-checkbox-container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
+.custom-checkbox-container input[type="checkbox"]:hover {
+    border-color: #2196F3;
 }
 
-/* Create a custom checkmark */
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-    border-radius: 5px;
-}
-
-/* On hover, add a grey background color */
-.custom-checkbox-container:hover input~.checkmark {
-    background-color: #ccc;
-}
-
-/* When the checkbox is checked, add a blue background */
-.custom-checkbox-container input:checked~.checkmark {
+.custom-checkbox-container input[type="checkbox"]:checked {
     background-color: #2196F3;
+    border-color: #2196F3;
 }
 
-/* Create the checkmark (hidden when unchecked) */
-.checkmark:after {
-    content: "";
+/* Adds a white `✓` centered inside the circle */
+.custom-checkbox-container input[type="checkbox"]:checked::after {
+    content: '✓';
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.custom-checkbox-container .checkmark {
     display: none;
 }
 
-/* Show the checkmark when checked */
-.custom-checkbox-container input:checked~.checkmark:after {
-    display: block;
-}
-
-/* Style the checkmark */
-.custom-checkbox-container .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
 .item-text {
-    margin-left: 10px;
-    /* Space between checkmark and text */
+    flex-grow: 1;
+    color: #F2F2F2;
+    font-size: 18px;
+    line-height: 22px;
+    user-select: none;
 }
 
-/* Delete Button Styling */
+.custom-checkbox-container input[type="checkbox"]:checked ~ .item-text {
+    text-decoration: line-through;
+    color: #8A8886;
+}
+
 .delete-button {
-    background-color: #f44336;
-    color: white;
+    background-color: transparent;
+    color: #cccccc;
     border: none;
-    padding: 8px 12px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 5px;
+    font-weight: bold;
+    font-size: 22px;
     cursor: pointer;
-    margin-left: 15px;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
 }
 
 .delete-button:hover {
-    background-color: #d32f2f;
+    background-color: rgba(204, 204, 204, 0.15);
+    color: #cacaca;
+}
+
+@media (max-width: 640px) {
+    .welcome-text-wrapper h1 {
+        font-size: 32px;
+    }
+
+    .welcome-text-wrapper h2 {
+        font-size: 24px;
+    }
+
+    .item-wrapper li {
+        margin-bottom: 12px;
+        padding: 12px 15px;
+    }
+
+    .add-button-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .add-button-container input[type="text"],
+    .add-button-container button {
+        width: 100%;
+    }
 }
