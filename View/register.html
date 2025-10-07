@@ -9,24 +9,64 @@
     <title>To Do | DSW1</title>
 </head>
 <body>
-    <div class="Login">
+    <div class="general-wrapper">
+        <div class="signin-text-wrapper">
+            <h1>Create account</h1>
+            <h2>Join us and organize your tasks</h2>
+        </div>
+
         <form action="../Controller/registration.php" method="post">
-            <label for="username">Username:</label>
-            <input id="username" name="username" type="text" required>
-            <br>
-            <label for="email">Email:</label>
-            <input id="email" name="email" type="email" required>
-            <br>
-            <label for="birthdate">Birth Date:</label>
-            <input id="birthdate" name="birthdate" type="date" required>
-            <br>
-            <label for="password">Password:</label>
-            <input id="password" name="password" type="password" required>
-            <i class="bi bi-eye-fill"></i>
-            <br>
-            <div class="button">
-            <button type="submit">Enter</button>
-            <button type="button" onclick="window.location.href='/PHP_Projects/To_Do-PHP/View/login.html'">Login</button>
+            <div class="input-container">
+                <label for="username">
+                    <input
+                        id="username"
+                        placeholder="Username"
+                        name="username"
+                        type="text"
+                        required
+                    />
+                </label>
+
+                <label for="email">
+                    <input
+                        id="email"
+                        placeholder="Email"
+                        name="email"
+                        type="email"
+                        required
+                    />
+                </label>
+
+                <label for="birthdate">
+                    <input
+                        id="birthdate"
+                        name="birthdate"
+                        type="date"
+                        required
+                    />
+                </label>
+
+                <label for="password" class="password-container">
+                    <input
+                        id="password"
+                        placeholder="Password"
+                        name="password"
+                        type="password"
+                        required
+                    />
+                    <i class="bi bi-eye-fill" id="togglePassword"></i>
+                </label>
+            </div>
+
+            <div class="button-container">
+                <label class="submit-button-container">
+                    <button type="submit">REGISTER</button>
+                </label>
+
+                <h2>
+                    Already have an account?
+                    <a href="/PHP_Projects/To_Do-PHP/View/login.html">Login now</a>
+                </h2>
             </div>
         </form>
     </div>
