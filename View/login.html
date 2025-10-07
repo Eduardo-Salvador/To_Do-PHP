@@ -1,26 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="../img/icon-to-do-list.png" />
-    <link rel="stylesheet" href="../assets/login.css">
+    <link rel="stylesheet" href="../assets/login.css" />
     <title>To Do | DSW1</title>
-</head>
-<body>
-    <div class="Login">
-        <form action="../Controller/login.php" method="POST">
-            <label for="email">Email:</label>
-            <input id="email" name="email" type="text" required>
-            <br>
-            <label for="password">Password:</label>
-            <input id="password" name="password" type="password" required>
-            <br>
-            <div class="button">
-            <button type="submit">Enter</button>
-            <button type="button" onclick="window.location.href='/PHP_Projects/To_Do-PHP/View/register.html'">Register</button>
-            </div>
-        </form>
+  </head>
+  <body>
+    <div class="general-wrapper">
+      <div class="signin-text-wrapper">
+        <h1>Hello again!</h1>
+        <h2>We are happy to have you back.</h2>
+      </div>
+
+      <form action="../Controller/login.php" method="POST">
+        <div class="input-container">
+          <label for="email">
+            <input
+              id="email"
+              placeholder="Email"
+              name="email"
+              type="text"
+              required
+            />
+          </label>
+
+          <label for="password">
+            <input
+              id="password"
+              placeholder="Password"
+              name="password"
+              type="password"
+              required
+            />
+          </label>
+        </div>
+
+        <div class="button-container">
+          <label class="submit-button-container">
+            <button type="submit">LOGIN</button>
+          </label>
+
+          <h2>
+            Don't have an account?
+            <a href="/PHP_Projects/To_Do-PHP/View/register.html">Signup now</a>
+          </h2>
+        </div>
+      </form>
     </div>
-</body>
+  </body>
 </html>
