@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="../img/icon-to-do-list.png" />
+    <link rel="icon" type="image/png" href="../assets/img/icon-to-do-list.png" />
     <link rel="stylesheet" href="../assets/login.css" />
     <title>To Do | DSW1</title>
   </head>
@@ -44,10 +44,36 @@
 
           <h2>
             Don't have an account?
-            <a href="/PHP_Projects/To_Do-PHP/View/register.html">Signup now</a>
+            <a href="../View/register.html">Signup now</a>
           </h2>
         </div>
       </form>
     </div>
+
+    <script>
+      // This function reads the URLs query string (after '?')
+      function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+      }
+
+      window.onload = function() {
+        const error = getQueryParam('error'); // Get the 'error'
+
+        // Comparison sequence
+        if(error) {
+          let message = "";
+          if(error === 'invalidpassword') {
+            message = "Incorrect password! Please try again.";
+          }else if(error === 'invaliduser') {
+            message = "Oooops! This user was not found."
+          }else {
+            message = "Oooops! An unknown error occurred."
+          }
+
+          alert(message);
+        }
+      }
+    </script>
   </body>
 </html>

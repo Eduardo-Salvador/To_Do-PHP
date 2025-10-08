@@ -21,6 +21,18 @@
         birthdate DATE
     );
 
+    CREATE TABLE tasks (
+    id_task INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NULL,
+    is_done TINYINT(1) NOT NULL DEFAULT 0,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES user(id_user)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+
     */
 ?>
 

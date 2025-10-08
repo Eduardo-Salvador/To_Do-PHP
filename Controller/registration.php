@@ -23,7 +23,6 @@
             exit();
         } else {
             $hash = password_hash($password, PASSWORD_DEFAULT);
-
             $stmt = $conn->prepare("INSERT INTO user (username, email, birthdate, password) VALUES (?, ?, ?, ?)");
             $stmt->bind_param("ssss", $username, $email, $birthdate, $hash);
             $stmt->execute();

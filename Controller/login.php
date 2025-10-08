@@ -15,13 +15,13 @@
         exit();
     } else if(strtolower($EMAIL) == "admin@example.com" && $PASS == "123"){
         $_SESSION['username'] = 'admin';
-        header("../../admin.php");
+        header("admin.php");
         exit();
     } else if($row = $result->fetch_assoc()) {
         if(password_verify($PASS, $row['password'])){
             $_SESSION['id_user'] = $row['id_user'];
             $_SESSION['email'] = $row['email'];
-            header('Location: ../View/initialtab.html');
+            header('Location: initialtab.php');
             exit();
         } else {
             header('Location: ../View/login.html?error=invalidpassword');

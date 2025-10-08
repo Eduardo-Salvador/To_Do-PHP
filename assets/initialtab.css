@@ -170,6 +170,11 @@ body {
     color: #8A8886;
 }
 
+.edit-button-wrapper {
+    display: flex;
+    align-items: baseline;
+}
+
 .delete-button {
     background-color: transparent;
     color: #cccccc;
@@ -188,6 +193,28 @@ body {
 }
 
 .delete-button:hover {
+    background-color: rgba(204, 204, 204, 0.15);
+    color: #2196F3;
+}
+
+.edit-button {
+    background-color: transparent;
+    color: #cccccc;
+    border: none;
+    font-weight: bold;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.edit-button:hover {
     background-color: rgba(204, 204, 204, 0.15);
     color: #cacaca;
 }
@@ -216,3 +243,6 @@ body {
         width: 100%;
     }
 }
+
+/* Extra leve para itens concluídos (mantém seu visual) */
+.done .item-text { text-decoration: line-through; color:#8A8886; }

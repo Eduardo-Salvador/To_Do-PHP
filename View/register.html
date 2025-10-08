@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../img/icon-to-do-list.png" />
+    <link rel="icon" type="image/png" href="../assets/img/icon-to-do-list.png" />
     <link rel="stylesheet" href="../assets/register.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <title>To Do | DSW1</title>
@@ -65,10 +65,49 @@
 
                 <h2>
                     Already have an account?
-                    <a href="/PHP_Projects/To_Do-PHP/View/login.html">Login now</a>
+                    <a href="../View/login.html">Login now</a>
                 </h2>
             </div>
         </form>
     </div>
+
+    <script>
+        const passwordField = document.getElementById('password');
+        const togglePassword = document.getElementById('togglePassword');
+
+        togglePassword.addEventListener('click', function() {
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                toggleButton.textContent = 'Hide'
+            } else {
+                passwordField.type = 'password';
+                toggleButton.textContent = 'Show'
+            }
+        })
+
+      // This function reads the URLs query string (after '?')
+      function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+      }
+
+      window.onload = function() {
+        const error = getQueryParam('error'); // Get the 'error'
+
+        // Comparison sequence
+        if(error) {
+          let message = "";
+          if(error === 'userexists') {
+            message = "Ooops! This username as alredy taken.";
+          }else if(error === 'invalidrequest') {
+            message = "Ooops! Invalid request."
+          }else {
+            message = "An unknown error occurred."
+          }
+
+          alert(message);
+        }
+      }
+    </script>
 </body>
 </html>
