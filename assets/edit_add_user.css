@@ -14,7 +14,7 @@ body {
     background-color: #1E1E1E;
     border-radius: 8px;
     padding: 30px 25px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .form-wrapper h2 {
@@ -93,7 +93,7 @@ button.cancel-button:hover {
     .form-wrapper {
         padding: 20px 15px;
     }
-    
+
     .form-wrapper h2 {
         font-size: 24px;
     }

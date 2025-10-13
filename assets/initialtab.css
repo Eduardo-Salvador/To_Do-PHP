@@ -11,22 +11,30 @@ body {
     font-family: "Roboto", sans-serif;
     min-height: 100vh;
     padding: 40px 20px;
+    color: #F2F2F2;
+}
+
+.h1text {
+    padding-bottom: 20px;
 }
 
 .general-wrapper {
+    display: flex;
+    flex-direction: column;
     max-width: 600px;
     margin: 0 auto;
 }
 
 .welcome-text-wrapper {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 15px;
 }
 
 .welcome-text-wrapper h1 {
     font-weight: 700;
     font-size: 40px;
     color: #F2F2F2;
-    margin-bottom: 10px;
 }
 
 .welcome-text-wrapper h2 {
@@ -35,26 +43,27 @@ body {
     color: #CCCCCC;
 }
 
-/* Remove circles and numbers from the list */
-.item-wrapper ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-/* Individual cards */
-.item-wrapper li {
-    background-color: #1E1E1E;
+.logout-button {
+    height: 40px;
+    padding: 0 20px;
+    font-size: 12px;
+    margin-top: 60px;
+    margin-left: 150px;
+    font-weight: 700;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    margin-bottom: 15px;
-    padding: 15px 20px;
+    cursor: pointer;
+    background-color: #E53935;
+    color: white;
+    border: none;
     transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.item-wrapper li:hover {
-    background-color: #2A2A2A;
-    transform: scale(1.01);
+.logout-button:hover {
+    background-color: #C62828;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(229, 57, 53, 0.4);
 }
 
 .add-button-container {
@@ -88,8 +97,8 @@ body {
 
 .add-button-container button {
     height: 50px;
-    padding: 0 30px;
-    font-size: 18px;
+    padding: 0 25px;
+    font-size: 16px;
     font-weight: 600;
     border-radius: 8px;
     cursor: pointer;
@@ -97,9 +106,6 @@ body {
     color: white;
     border: none;
     transition: all 0.2s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    flex-shrink: 0;
 }
 
 .add-button-container button:hover {
@@ -108,8 +114,24 @@ body {
     box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
 }
 
-.add-button-container button:active {
-    transform: translateY(0);
+.item-wrapper ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.item-wrapper li {
+    background-color: #1E1E1E;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    transition: all 0.2s ease;
+}
+
+.item-wrapper li:hover {
+    background-color: #2A2A2A;
+    transform: scale(1.01);
 }
 
 .custom-checkbox-container {
@@ -119,7 +141,6 @@ body {
     gap: 12px;
 }
 
-/* Custom checkbox design */
 .custom-checkbox-container input[type="checkbox"] {
     appearance: none;
     width: 22px;
@@ -141,7 +162,6 @@ body {
     border-color: #2196F3;
 }
 
-/* Adds a white `✓` centered inside the circle */
 .custom-checkbox-container input[type="checkbox"]:checked::after {
     content: '✓';
     position: absolute;
@@ -153,10 +173,6 @@ body {
     font-weight: bold;
 }
 
-.custom-checkbox-container .checkmark {
-    display: none;
-}
-
 .item-text {
     flex-grow: 1;
     color: #F2F2F2;
@@ -165,7 +181,7 @@ body {
     user-select: none;
 }
 
-.custom-checkbox-container input[type="checkbox"]:checked ~ .item-text {
+.done .item-text {
     text-decoration: line-through;
     color: #8A8886;
 }
@@ -175,7 +191,8 @@ body {
     align-items: baseline;
 }
 
-.delete-button {
+.delete-button,
+.edit-button {
     background-color: transparent;
     color: #cccccc;
     border: none;
@@ -195,23 +212,6 @@ body {
 .delete-button:hover {
     background-color: rgba(204, 204, 204, 0.15);
     color: #2196F3;
-}
-
-.edit-button {
-    background-color: transparent;
-    color: #cccccc;
-    border: none;
-    font-weight: bold;
-    font-size: 22px;
-    cursor: pointer;
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
-    flex-shrink: 0;
 }
 
 .edit-button:hover {
@@ -243,6 +243,3 @@ body {
         width: 100%;
     }
 }
-
-/* Extra leve para itens concluídos (mantém seu visual) */
-.done .item-text { text-decoration: line-through; color:#8A8886; }

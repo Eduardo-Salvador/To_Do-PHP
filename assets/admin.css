@@ -97,34 +97,36 @@ body {
         font-size: 14px;
     }
 
-    .admin-table th, .admin-table td {
+    .admin-table th,
+    .admin-table td {
         padding: 10px 8px;
     }
 }
 
 .add-button {
-  background-color: #2196F3;
-  border: none;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-top: 15px;
-  transition: 0.2s;
+    background-color: #2196F3;
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.2s;
 }
+
 .add-button:hover {
-  background-color: #1976D2;
+    background-color: #1976D2;
 }
 
 .logout-button {
-background-color: red;
-  border: none;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  margin-left: 10px;
-  transition: 0.2s;
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    transition: 0.2s;
 }
