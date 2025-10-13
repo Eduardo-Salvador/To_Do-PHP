@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-color: #121212;
+    font-family: "Roboto", sans-serif;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.welcome-text-wrapper h1 {
+    font-weight: 700;
+    font-size: 40px;
+    color: #F2F2F2;
+    margin-bottom: 10px;
+}
+
+.welcome-text-wrapper h2 {
+    font-weight: 500;
+    font-size: 28px;
+    color: #CCCCCC;
+}
+
+.table-container {
+    background-color: #1E1E1E;
+    border-radius: 8px;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #F2F2F2;
+    font-size: 16px;
+    text-align: left;
+    min-width: 500px;
+}
+
+.admin-table thead {
+    background-color: #2A2A2A;
+}
+
+.admin-table th {
+    padding: 14px 12px;
+    font-weight: 600;
+    color: #CCCCCC;
+    border-bottom: 2px solid #3A3A3A;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.admin-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #2A2A2A;
+    color: #F2F2F2;
+}
+
+.admin-table tr:hover {
+    background-color: #2A2A2A;
+    transition: all 0.2s ease;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.edit-button,
+.delete-button {
+    background-color: transparent;
+    color: #CCCCCC;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.edit-button:hover {
+    background-color: rgba(204, 204, 204, 0.1);
+    color: #2196F3;
+}
+
+.delete-button:hover {
+    background-color: rgba(204, 204, 204, 0.1);
+    color: #E53935;
+}
+
+@media (max-width: 640px) {
+    .admin-table {
+        font-size: 14px;
+    }
+
+    .admin-table th, .admin-table td {
+        padding: 10px 8px;
+    }
+}

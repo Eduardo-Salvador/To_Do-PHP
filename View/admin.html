@@ -1,27 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="../assets/img/icon-to-do-list.png" />
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/admin.css" />
     <title>To Do | DSW1</title>
-</head>
-<body>
-<table>
-    <th>
-        <tr>
-            <td>Username </td>
-            <td> Email Address </td>
-            <td> Date of Birth </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </th>
-</table>
-</body>
+  </head>
+  <body>
+    <div class="general-wrapper">
+      <div class="welcome-text-wrapper">
+        <h1>Área Administrativa</h1>
+        <h2>Gerenciamento de Usuários</h2>
+      </div>
+
+      <div class="table-container">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Nome de Usuário</th>
+              <th>Email</th>
+              <th>Data de Aniversário</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Eduardo Santiago</td>
+              <td>eduardo@email.com</td>
+              <td>15/04/2002</td>
+              <td class="action-buttons">
+                <!-- Simbolos Unicode -->
+                <button class="edit-button" title="Editar">&#9998;</button> <!-- ✎ -->
+                <button class="delete-button" title="Excluir">&#10006;</button> <!-- ✖ -->
+                <!-- Ref: https://wp-kama.com/2308/100-unicode-symbols-for-html-css-js-php -->
+              </td>
+            </tr>
+            <tr>
+              <td>Gustavo Isaac</td>
+              <td>gustavo.isaac@email.com</td>
+              <td>23/09/1998</td>
+              <td class="action-buttons">
+                <button class="edit-button" title="Editar">&#9998;</button>
+                <button class="delete-button" title="Excluir">&#10006;</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Lucas Ferreira</td>
+              <td>lucas.ferreira@email.com</td>
+              <td>23/09/1998</td>
+              <td class="action-buttons">
+                <button class="edit-button" title="Editar">&#9998;</button>
+                <button class="delete-button" title="Excluir">&#10006;</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
 </html>
