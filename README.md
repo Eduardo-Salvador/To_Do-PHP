@@ -2,9 +2,9 @@
 
 This is a simple web application project for learning purposes. It is a To Do list built with **PHP**, **HTML**, and **CSS**. The project demonstrates CRUD operations, user authentication, session control, and database management.
 
-## 🎥 Demo
+## 🎥 Watch demo by clicking here: 
 
-[![Watch the video](https://img.youtube.com/vi/6ZtQthBZtX0/maxresdefault.jpg)](https://youtu.be/6ZtQthBZtX0)
+[![Watch the video](https://img.youtube.com/vi/6ZtQthBZtX0/hqdefault.jpg)](https://youtu.be/6ZtQthBZtX0)
 
 ## 🚀 Features
 
