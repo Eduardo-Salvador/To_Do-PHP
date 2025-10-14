@@ -6,27 +6,27 @@ This is a simple web application project for learning purposes. It is a To Do li
 
 [![Watch the video](assets/123.gif)](https://youtu.be/6ZtQthBZtX0)
 
-## 🚀 Features
+## Features
 
 - User registration
 - Login and session management
 - Create, edit, mark as done, and delete tasks
 - Simple and responsive interface
 
-## 🛠️ Technologies
+## Technologies
 
 - PHP
 - HTML5
 - CSS3
 - MySQL
 
-## 📂 Project Structure
+## Project Structure
 
 - `Controller/` – Handles the main logic for user actions and tasks
 - `Model/` – Database connection and queries
 - `View/` – HTML templates and forms
 - `assets/` – CSS files and images
 
-## 💡 Purpose
+## Purpose
 
 This project was created for educational purposes, to practice building a basic web application with full CRUD operations, login functionality, session handling, and database integration.
