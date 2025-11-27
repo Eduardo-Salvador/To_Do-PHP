@@ -1,6 +1,6 @@
 <?php
 session_start();
-include __DIR__ . "/../Model/connection.php";
+include __DIR__ . "connection.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'] ?? '';

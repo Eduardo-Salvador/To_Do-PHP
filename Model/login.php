@@ -1,6 +1,6 @@
 <?php
 session_start();
-include __DIR__ . "/../Model/connection.php";
+include __DIR__ . "connection.php";
 
 $adminEmail = 'admin@admin.com';
 $adminPassword = 'admin123';
@@ -43,7 +43,7 @@ if ($row = $result->fetch_assoc()) {
         if (strtolower($row['email']) == 'admin@admin.com') {
             header('Location: ../Controller/admin.php');
         } else {
-            header('Location: initialtab.php');
+            header('Location: ../Controller/initialtab.php');
         }
         exit();
     } else {

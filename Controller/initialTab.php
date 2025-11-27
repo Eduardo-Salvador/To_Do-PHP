@@ -4,7 +4,7 @@ include __DIR__ . "/../Model/connection.php";
 
 if (!isset($_SESSION['id_user'])) {
 
-  header('Location: ../Controller/Login/login.html');
+  header('Location: ../View/Login/login.html');
   exit();
 }
 
